@@ -19,8 +19,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 import os
 from dotenv import load_dotenv
 
-
 load_dotenv()
+
+print("API_ID =", os.environ.get("API_ID"))
+print("API_HASH =", bool(os.environ.get("API_HASH")))
+print("SESSION =", bool(os.environ.get("SESSION")))
 
 
 class Config:
