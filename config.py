@@ -21,9 +21,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-print("API_ID =", os.environ.get("API_ID"))
-print("API_HASH =", bool(os.environ.get("API_HASH")))
-print("SESSION =", bool(os.environ.get("SESSION")))
+class Config:
+    def __init__(self) -> None:
+        self.API_ID: str = os.environ.get("API_ID", None)
+        self.API_HASH: str = os.environ.get("API_HASH", None)
+        self.SESSION: str = os.environ.get("SESSION", None)
+        self.BOT_TOKEN: str = os.environ.get("BOT_TOKEN", None)
 
 
 class Config:
